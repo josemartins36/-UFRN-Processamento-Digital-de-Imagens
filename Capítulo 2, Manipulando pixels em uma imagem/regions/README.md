@@ -3,7 +3,7 @@
 Utilizando o programa da Listagem 4, “pixels.cpp” como referência, implemente um programa `regions.cpp`. Esse programa deverá solicitar ao usuário as coordenadas de dois pontos `P1` e `P2` localizados dentro dos limites do tamanho da imagem e exibir a imagem que lhe for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos pelos pontos `P1` e `P2` será exibida com o **negativo** da imagem na região correspondente.
 
 <p align="center">
-  <img src="exemplo_negativo.png" alt="Exemplo da aplicação do negativo na região selecionada" width="500"/>
+  <img src="exemplo_negativo.png" width="500"/>
 </p>
 
 <p align="center"><i>Figura: Região retangular com efeito negativo aplicada na imagem original.</i></p>
