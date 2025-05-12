@@ -21,9 +21,36 @@ Inspirado na **Listagem 4 ("pixels.cpp")** de um material de estudo sobre acesso
 
 ---
 
-## Efeito Negativo
+## Trechos-chave do código
 
-O efeito negativo é obtido invertendo o valor de cada pixel da região selecionada:
+### 1. Carregamento da imagem - em que a imagem é aberta em tons de cinza.
 
 ```cpp
-image.at<uchar>(i, j) = 255 - image.at<uchar>(i, j);
+cv::Mat image = cv::imread("bolhas.png", cv::IMREAD_GRAYSCALE);
+if (!image.data) {
+    std::cout << "Erro ao abrir a imagem!" << std::endl;
+    return -1;
+}
+```
+
+### 2. Leitura dos pontos P1 e P2 fornecidos pelo usuário
+
+```cpp
+int x1, y1, x2, y2;
+std::cout << "Digite as coordenadas de P1 (x y): ";
+std::cin >> x1 >> y1;
+
+std::cout << "Digite as coordenadas de P2 (x y): ";
+std::cin >> x2 >> y2;
+```
+
+### 3. Aplicação do negativo na região delimitada
+
+```cpp
+for (int i = ymin; i <= ymax; i++) {
+    for (int j = xmin; j <= xmax; j++) {
+        image.at<uchar>(i, j) = 255 - image.at<uchar>(i, j);
+    }
+}
+```
+
