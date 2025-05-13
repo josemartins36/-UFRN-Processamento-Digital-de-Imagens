@@ -15,4 +15,6 @@ Repositório da disciplina Processamento Digital de Imagens (PDI) da UFRN, desen
 [Capítulo 11, Preenchendo regiões]
 
 [Capítulo 12, Manipulação de histogramas - equalize](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2012%2C%20Manipula%C3%A7%C3%A3o%20de%20histogramas/equalize)
+
+[Capítulo 12, Manipulação de histogramas - motiondetector](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2012%2C%20Manipula%C3%A7%C3%A3o%20de%20histogramas/motiondetector)
 # Unidade 2
