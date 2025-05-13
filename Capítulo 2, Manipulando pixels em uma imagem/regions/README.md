@@ -6,7 +6,7 @@ Utilizando o programa da Listagem 4, “pixels.cpp” como referência, implemen
   <img src="exemplo_negativo.png" width="500"/>
 </p>
 
-<p align="center"><i>Figura: Região retangular com efeito negativo aplicada na imagem original.</i></p>
+<p align="center"><i>Figura 1: Região retangular com efeito negativo aplicada na imagem original.</i></p>
 
 ---
 
@@ -60,16 +60,16 @@ for (int i = ymin; i <= ymax; i++) {
 
 ## Resultados
 <p align="center">
-  <img src="./build/papagaio.png" width="300"/>
+  <img src="./build/papagaio.png" width="500"/>
 </p>
 
-<p align="center"><i>Figura: Imagem original.</i></p>
+<p align="center"><i>Figura 2: Imagem original.</i></p>
 
 <p align="center">
-  <img src="./build/imagem_editada.png" width="300"/>
+  <img src="./build/imagem_editada.png" width="500"/>
 </p>
 
-<p align="center"><i>Figura: Imagem editada.</i></p>
+<p align="center"><i>Figura 3: Imagem editada.</i></p>
 
 
 
