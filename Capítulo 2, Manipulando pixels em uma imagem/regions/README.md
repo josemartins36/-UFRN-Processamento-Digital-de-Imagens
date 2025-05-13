@@ -12,7 +12,7 @@ Utilizando o programa da Listagem 4, “pixels.cpp” como referência, implemen
 
 ## Descrição da Tarefa
 
-Inspirado na **Listagem 4 ("pixels.cpp")** de um material de estudo sobre acesso a pixels com OpenCV, o objetivo desta tarefa é desenvolver um programa chamado `regions.cpp` com as seguintes funcionalidades:
+Inspirado na **Listagem 4 ("pixels.cpp")** do material de estudo sobre acesso a pixels com OpenCV, o objetivo desta tarefa é desenvolver um programa chamado `regions.cpp` com as seguintes funcionalidades:
 
 - Carregar uma imagem (`papagaio.png`) em modo **grayscale**.
 - Solicitar ao usuário dois pontos (`P1(x1, y1)` e `P2(x2, y2)`) que definem um retângulo dentro da imagem.
