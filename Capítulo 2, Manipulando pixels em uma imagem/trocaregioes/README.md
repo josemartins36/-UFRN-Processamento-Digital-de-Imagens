@@ -73,3 +73,5 @@ C_clone.copyTo(B);
 <p align="center">
   <img src="./build/imagem_trocada.png" width="500"/>
 </p>
+
+<p align="center"><i>Figura 3: Imagem editada.</i></p>
