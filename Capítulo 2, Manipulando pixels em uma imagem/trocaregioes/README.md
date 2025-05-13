@@ -21,3 +21,31 @@ Inspirado na **Listagem 4 ("pixels.cpp")** do material de estudo sobre acesso a 
 - Exibir a imagem modificada em uma janela.
 
 ---
+
+## Trechos-chave do código
+
+### 1. Carregamento da imagem
+
+Este trecho usa a função `cv::imread` para abrir o arquivo `"imagem.jpg"` no modo `IMREAD_COLOR`, mantendo as três bandas de cor (BGR). Um teste é feito para garantir que a imagem foi carregada corretamente.
+
+```cpp
+cv::Mat imagem = cv::imread("imagem.jpg", cv::IMREAD_COLOR);
+if (imagem.empty()) {
+    std::cerr << "Erro ao carregar a imagem!" << std::endl;
+    return -1;
+}
+```
+
+### 2. Definição dos quadrantes usando ROI (regiões de interesse)
+A imagem é dividida em quatro quadrantes utilizando cv::Rect, que define regiões de interesse com base nas dimensões da imagem.
+
+```cpp
+int meio_linha = imagem.rows / 2;
+int meio_coluna = imagem.cols / 2;
+
+cv::Mat A = imagem(cv::Rect(0, 0, meio_coluna, meio_linha));                         // superior esquerdo
+cv::Mat B = imagem(cv::Rect(meio_coluna, 0, meio_coluna, meio_linha));               // superior direito
+cv::Mat C = imagem(cv::Rect(0, meio_linha, meio_coluna, meio_linha));                // inferior esquerdo
+cv::Mat D = imagem(cv::Rect(meio_coluna, meio_linha, meio_coluna, meio_linha));      // inferior direito
+```
+
