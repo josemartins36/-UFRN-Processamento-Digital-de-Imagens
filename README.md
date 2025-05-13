@@ -10,6 +10,6 @@ Repositório da disciplina Processamento Digital de Imagens (PDI) da UFRN, desen
 
 [Capítulo 5, Serialização de dados em ponto flutuante via FileStorage](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%205%2C%20Serializa%C3%A7%C3%A3o%20de%20dados%20em%20ponto%20flutuante%20via%20FileStorage) **FALTA TERMINAR DE COMENTAR**
 
-[ca](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2010%2C%20Decomposi%C3%A7%C3%A3o%20de%20imagens%20em%20planos%20de%20bits/esteganografia)
+[Capítulo 10, Decomposição de imagens em planos de bits - esteganografia](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2010%2C%20Decomposi%C3%A7%C3%A3o%20de%20imagens%20em%20planos%20de%20bits/esteganografia)
 
 # Unidade 2
