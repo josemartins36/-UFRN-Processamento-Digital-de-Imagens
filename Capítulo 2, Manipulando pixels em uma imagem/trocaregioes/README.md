@@ -65,7 +65,7 @@ C_clone.copyTo(B);
 
 ## Resultados
 <p align="center">
-  <img src="./build/papagaio.png" width="500"/>
+  <img src="papagaio.png" width="500"/>
 </p>
 
 <p align="center"><i>Figura 2: Imagem original.</i></p>
