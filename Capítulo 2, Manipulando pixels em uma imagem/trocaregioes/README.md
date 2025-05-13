@@ -9,3 +9,15 @@ Utilizando o programa da **Listagem 4**, “pixels.cpp” como referência, impl
 <p align="center"><i>Figura 1: Troca dos quadrantes diagonais na imagem original.</i></p>
 
 ---
+## Descrição da Tarefa
+
+Inspirado na **Listagem 4 ("pixels.cpp")** do material de estudo sobre acesso a pixels com OpenCV, o objetivo desta tarefa é desenvolver um programa chamado `trocaregions.cpp` com as seguintes funcionalidades:
+
+- Carregar uma imagem (`imagem.jpg`) em modo **colorido**.
+- Dividir a imagem em quatro quadrantes iguais.
+- Trocar os quadrantes em diagonal:  
+  - superior esquerdo ↔ inferior direito  
+  - superior direito ↔ inferior esquerdo
+- Exibir a imagem modificada em uma janela.
+
+---
