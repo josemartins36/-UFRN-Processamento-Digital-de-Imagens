@@ -23,17 +23,17 @@ Inspirado na **Listagem 4 ("pixels.cpp")** de um material de estudo sobre acesso
 
 ## Trechos-chave do código
 
-### 1. Carregamento da imagem - em que a imagem é aberta em tons de cinza.
+### 1. Carregamento da imagem - este trecho usa a função cv::imread para abrir o arquivo "papagaio.png" no modo IMREAD_GRAYSCALE, ou seja, convertendo a imagem para tons de cinza. Cada pixel passa a ser representado por um valor entre 0 (preto) e 255 (branco), facilitando operações de processamento.
 
 ```cpp
-cv::Mat image = cv::imread("bolhas.png", cv::IMREAD_GRAYSCALE);
+cv::Mat image = cv::imread("papagaio.png", cv::IMREAD_GRAYSCALE);
 if (!image.data) {
     std::cout << "Erro ao abrir a imagem!" << std::endl;
     return -1;
 }
 ```
 
-### 2. Leitura dos pontos P1 e P2 fornecidos pelo usuário
+### 2. Leitura dos pontos P1 e P2 fornecidos pelo usuário - essas linhas solicitam ao usuário que digite as coordenadas dos pontos P1 e P2, que serão usados para definir uma região retangular da imagem. Cada ponto é representado por dois inteiros (x, y). Esses pontos são os vértices opostos do retângulo onde será aplicado o efeito de negativo. 
 
 ```cpp
 int x1, y1, x2, y2;
@@ -44,7 +44,7 @@ std::cout << "Digite as coordenadas de P2 (x y): ";
 std::cin >> x2 >> y2;
 ```
 
-### 3. Aplicação do negativo na região delimitada
+### 3. Aplicação do negativo na região delimitada - esse trecho percorre a região retangular definida pelos pontos P1 e P2. Em cada iteração, o valor do pixel na posição (i, j) é acessado com image.at<uchar>(i, j) e substituído por seu negativo (255 - valor). O resultado é a inversão dos tons de cinza naquela área, criando o efeito visual de negativo fotográfico apenas dentro da área selecionada.
 
 ```cpp
 for (int i = ymin; i <= ymax; i++) {
