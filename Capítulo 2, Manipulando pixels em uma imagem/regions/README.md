@@ -56,6 +56,14 @@ for (int i = ymin; i <= ymax; i++) {
     }
 }
 ```
+---
 
 ## Resultados
+<p align="center">
+  <img src="papagaio.png" width="300"/>
+</p>
+
+<p align="center"><i>Figura: Imagem original.</i></p>
+
+
 
