@@ -1,6 +1,6 @@
 # regions.cpp — Seleção e Negativo de Região em Imagens com OpenCV
 
-Utilizando o programa da Listagem 4, “pixels.cpp” como referência, implemente um programa `regions.cpp`. Esse programa deverá solicitar ao usuário as coordenadas de dois pontos `P1` e `P2` localizados dentro dos limites do tamanho da imagem e exibir a imagem que lhe for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos pelos pontos `P1` e `P2` será exibida com o **negativo** da imagem na região correspondente.
+Utilizando o programa da Listagem 4, “pixels.cpp” como [referência](https://agostinhobritojr.github.io/tutorial/pdi/pixels.html), implemente um programa `regions.cpp`. Esse programa deverá solicitar ao usuário as coordenadas de dois pontos `P1` e `P2` localizados dentro dos limites do tamanho da imagem e exibir a imagem que lhe for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos pelos pontos `P1` e `P2` será exibida com o **negativo** da imagem na região correspondente.
 
 <p align="center">
   <img src="exemplo_negativo.png" width="500"/>
