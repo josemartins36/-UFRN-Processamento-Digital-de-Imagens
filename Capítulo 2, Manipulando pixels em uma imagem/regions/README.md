@@ -66,7 +66,7 @@ for (int i = ymin; i <= ymax; i++) {
 <p align="center"><i>Figura: Imagem original.</i></p>
 
 <p align="center">
-  <img src="../build/bolhas_original.png)" width="300"/>
+  <img src="./build/bolhas_original.png)" width="300"/>
 </p>
 
 <p align="center"><i>Figura: Imagem editada.</i></p>
