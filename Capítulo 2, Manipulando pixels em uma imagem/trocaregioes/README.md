@@ -49,3 +49,16 @@ cv::Mat C = imagem(cv::Rect(0, meio_linha, meio_coluna, meio_linha));           
 cv::Mat D = imagem(cv::Rect(meio_coluna, meio_linha, meio_coluna, meio_linha));      // inferior direito
 ```
 
+### 3. Troca dos quadrantes diagonais
+Antes da troca, os quadrantes são clonados para preservar os dados originais.  Depois, os dados são copiados para as regiões opostas, realizando a troca dos quadrantes diagonais.
+```cpp
+cv::Mat A_clone = A.clone();
+cv::Mat B_clone = B.clone();
+cv::Mat C_clone = C.clone();
+cv::Mat D_clone = D.clone();
+
+A_clone.copyTo(D);
+D_clone.copyTo(A);
+B_clone.copyTo(C);
+C_clone.copyTo(B);
+```
