@@ -57,3 +57,5 @@ for (int i = ymin; i <= ymax; i++) {
 }
 ```
 
+## Resultados
+
