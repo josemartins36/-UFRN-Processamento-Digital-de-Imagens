@@ -62,3 +62,14 @@ D_clone.copyTo(A);
 B_clone.copyTo(C);
 C_clone.copyTo(B);
 ```
+
+## Resultados
+<p align="center">
+  <img src="./build/papagaio.png" width="500"/>
+</p>
+
+<p align="center"><i>Figura 2: Imagem original.</i></p>
+
+<p align="center">
+  <img src="./build/imagem_trocada.png" width="500"/>
+</p>
