@@ -16,3 +16,17 @@ Inspirado na abordagem do exemplo `filestorage.cpp` no material de estudo, o obj
 - Exibir um **gráfico da diferença** ao longo da linha comparada.
 
 ---
+
+## Trechos-chave do código
+
+### 1. Geração da senóide
+
+A imagem é inicializada com zeros e preenchida com valores baseados na função seno.
+
+```cpp
+cv::Mat senoide(256, 256, CV_8UC1, cv::Scalar(0));
+for (int x = 0; x < senoide.cols; ++x) {
+    int y = 127 + static_cast<int>(127 * std::sin(4 * 2 * CV_PI * x / senoide.cols));
+    senoide.at<uchar>(y, x) = 255;
+}
+```
