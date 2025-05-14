@@ -73,3 +73,9 @@ Particularmente, essa foi a tarefa que eu mais me interessei. Eu já conhecia a 
 </p>
 
 <p align="center"><i>Figura 3: sushi com biel oculto.</i></p>
+
+<p align="center">
+  <img src="./build/imagem_recuperada_biel.png" width="500"/>
+</p>
+
+<p align="center"><i>Figura 4: biel recuperado.</i></p>
