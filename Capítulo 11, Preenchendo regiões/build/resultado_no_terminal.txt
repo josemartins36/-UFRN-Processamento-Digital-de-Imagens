@@ -1,0 +1,4 @@
+256x256
+a figura tem 32 bolhas
+Objetos com buracos: 7
+
