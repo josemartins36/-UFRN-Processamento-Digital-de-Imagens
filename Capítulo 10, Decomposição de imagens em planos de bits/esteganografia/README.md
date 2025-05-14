@@ -18,3 +18,16 @@ O objetivo desta tarefa é desenvolver um programa chamado `esteganografia.cpp` 
 - Salvar a imagem recuperada em um arquivo chamado `imagem_recuperada.png`.
 
 ---
+
+## Trechos-chave do código
+
+### 1. Carregamento da imagem
+
+O código carrega a imagem esteganografada usando a função `cv::imread`. Caso a imagem não seja carregada corretamente, o programa exibe uma mensagem de erro.
+
+```cpp
+cv::Mat imagemEsteganografada = cv::imread(argv[1], cv::IMREAD_COLOR);
+if (imagemEsteganografada.empty()) {
+    std::cout << "Erro ao carregar a imagem." << std::endl;
+    return -1;
+}
