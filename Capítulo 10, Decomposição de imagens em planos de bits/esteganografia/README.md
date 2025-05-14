@@ -65,3 +65,11 @@ Após a execução do programa, a imagem recuperada foi gerada com sucesso. Dura
 </p>
 
 <p align="center"><i>Figura 2: imagem oculta na figura1.</i></p>
+
+Particularmente, essa foi a tarefa que eu mais me interessei. Eu já conhecia a ideia de esconder uma imagem dentro de outra, porém não em detalhes nem pelo nome de 'esteganografia'. Adicionalmente, utilizando o programa da [referência](https://agostinhobritojr.github.io/tutorial/pdi/bitplanes.html) 'bitplanes.cpp', ocultei a imagem do biel na do sushi e testei no meu programa para ver como ficaria a imagem recuperada.
+
+<p align="center">
+  <img src="esteganografia.png" width="500"/>
+</p>
+
+<p align="center"><i>Figura 3: sushi com biel oculto.</i></p>
