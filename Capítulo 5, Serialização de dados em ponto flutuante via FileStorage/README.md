@@ -100,3 +100,5 @@ plt.show()
 </p>
 
 <p align="center"><i>Figura 1: comparação da linha 128 das imagens.</i></p>
+
+A imagem armazenada como YML mantém os valores exatos em ponto flutuante, enquanto a versão PNG sofre transformação (normalização e conversão para uint8) para visualização. Como resultado, a diferença entre os pixels de cada formato, mesmo pequena, é visível numericamente. Isso ocorre devido à perda de precisão na conversão para 8 bits e à normalização aplicada ao salvar como imagem.
