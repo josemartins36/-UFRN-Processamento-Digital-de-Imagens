@@ -11,9 +11,8 @@ Usando o programa bitplanes.cpp como [referência](https://agostinhobritojr.gith
 ---
 ## Descrição da Tarefa
 
-O objetivo desta tarefa é desenvolver um programa chamado `esteganografia.cpp` que recupere uma imagem escondida nos bits menos significativos de uma imagem esteganografada.
+O objetivo desta tarefa é desenvolver um programa chamado `esteganografia.cpp` que recupere uma imagem escondida nos bits menos significativos de uma imagem esteganografada, com as seguintes funcionalidades:
 
-### Funcionalidades principais:
 - Carregar uma imagem esteganografada (`imagem_esteganografada.png`).
 - Extrair os 3 bits menos significativos de cada componente de cor (R, G, B) e colocá-los nos bits mais significativos da imagem recuperada.
 - Salvar a imagem recuperada em um arquivo chamado `imagem_recuperada.png`.
