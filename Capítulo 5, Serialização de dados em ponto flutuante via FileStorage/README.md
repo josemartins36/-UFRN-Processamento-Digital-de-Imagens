@@ -96,7 +96,7 @@ plt.show()
 ```
 ### 5. Resultados
 <p align="center">
-  <img src="comparação.png" width="500"/>
+  <img src="comparação.png" width="800"/>
 </p>
 
 <p align="center"><i>Figura 1: comparação da linha 128 das imagens.</i></p>
