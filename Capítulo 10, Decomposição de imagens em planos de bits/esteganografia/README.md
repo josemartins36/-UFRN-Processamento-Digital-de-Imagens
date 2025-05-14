@@ -31,3 +31,22 @@ if (imagemEsteganografada.empty()) {
     std::cout << "Erro ao carregar a imagem." << std::endl;
     return -1;
 }
+```
+
+### 2. Recuperação dos bits menos significativos
+O programa percorre cada pixel da imagem esteganografada e recupera os 3 bits menos significativos (LSB) de cada componente de cor (R, G, B), movendo-os para os bits mais significativos.
+
+```cpp
+for (int i = 0; i < imagemEsteganografada.rows; i++) {
+    for (int j = 0; j < imagemEsteganografada.cols; j++) {
+        pixelEsteganografado = imagemEsteganografada.at<cv::Vec3b>(i, j);
+
+        for (int c = 0; c < 3; c++) {
+            unsigned char lsb = pixelEsteganografado[c] & ((1 << nbits) - 1); // máscara para nbits
+            pixelRecuperado[c] = lsb << (8 - nbits);
+        }
+
+        imagemRecuperada.at<cv::Vec3b>(i, j) = pixelRecuperado;
+    }
+}
+```
