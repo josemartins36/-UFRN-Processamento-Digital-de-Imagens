@@ -45,3 +45,51 @@ cv::normalize(image, image_8u, 0, 255, cv::NORM_MINMAX);
 image_8u.convertTo(image_8u, CV_8U);
 cv::imwrite("senoide_horizontal-256.png", image_8u);
 ```
+
+A análise comparativa entre os arquivos gerados nos formatos PNG e YML foi realizada utilizando Python por ser uma linguagem mais prática e expressiva para esse tipo de tarefa. Com o auxílio das bibliotecas OpenCV e Matplotlib, foi possível ler os arquivos, extrair os dados relevantes e gerar os gráficos de forma rápida e intuitiva. Por isso, optei por realizar a parte analítica neste ambiente, facilitando tanto a manipulação dos dados quanto a visualização dos resultados.
+
+### 3. Comparando diferenças
+
+```python
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Leitura da imagem PNG como float
+img_png = cv2.imread("senoide_horizontal-256.png", cv2.IMREAD_GRAYSCALE).astype(np.float32)
+
+# Leitura da imagem YML
+fs = cv2.FileStorage("senoide_horizontal-256.yml", cv2.FileStorage_READ)
+img_yml = fs.getNode("mat").mat()
+fs.release()
+
+# Normalizar a imagem YML para 0-255 como no C++
+img_yml_norm = cv2.normalize(img_yml, None, 0, 255, cv2.NORM_MINMAX)
+
+# Comparação na linha 128
+linha = 128
+linha_png = img_png[linha, :]
+linha_yml = img_yml_norm[linha, :]
+
+# Diferença em float
+diferenca = np.abs(linha_png - linha_yml)
+
+# Gráfico
+plt.figure(figsize=(14, 6))
+
+plt.subplot(2, 1, 1)
+plt.plot(linha_png, label="PNG", color='blue')
+plt.plot(linha_yml, label="YML", color='orange', linestyle='--')
+plt.title("Comparação da Linha 128 nas Imagens")
+plt.ylabel("Intensidade")
+plt.legend()
+
+plt.subplot(2, 1, 2)
+plt.plot(diferenca, label="Diferença Absoluta", color='red')
+plt.title("Diferença entre PNG e YML na Linha 128")
+plt.xlabel("Coluna")
+plt.ylabel("Diferença")
+plt.legend()
+
+plt.tight_layout()
+plt.show()
