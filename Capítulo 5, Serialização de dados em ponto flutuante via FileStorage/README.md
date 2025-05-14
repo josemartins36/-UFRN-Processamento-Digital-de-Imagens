@@ -31,9 +31,17 @@ for (int i = 0; i < SIDE; ++i) {
 }
 
 ```
-
+### 2. Salvando em YML
 ```cpp
 cv::FileStorage fs("senoide_horizontal-256.yml", cv::FileStorage::WRITE);
 fs << "mat" << image;
 fs.release();
+```
+
+### 3. Salvando em PNG
+```cpp
+cv::Mat image_8u;
+cv::normalize(image, image_8u, 0, 255, cv::NORM_MINMAX);
+image_8u.convertTo(image_8u, CV_8U);
+cv::imwrite("senoide_horizontal-256.png", image_8u);
 ```
