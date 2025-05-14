@@ -14,8 +14,6 @@ Aprimore o algoritmo de contagem apresentado para identificar regiões com ou se
 
 ## Descrição da Tarefa
 
-O objetivo desta tarefa é desenvolver um programa chamado `esteganografia.cpp` que recupere uma imagem escondida nos bits menos significativos de uma imagem esteganografada, com as seguintes funcionalidades:
-
 - 
 - 
 - 
