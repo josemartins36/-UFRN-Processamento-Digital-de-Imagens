@@ -20,13 +20,13 @@ Inspirado na abordagem do exemplo `filestorage.cpp` no material de estudo, o obj
 ## Trechos-chave do código
 
 ### 1. Geração da senóide
-
-A imagem é inicializada com zeros e preenchida com valores baseados na função seno.
-
+A geração da senoide na horizontal (varia com i, constante em j)
 ```cpp
-cv::Mat senoide(256, 256, CV_8UC1, cv::Scalar(0));
-for (int x = 0; x < senoide.cols; ++x) {
-    int y = 127 + static_cast<int>(127 * std::sin(4 * 2 * CV_PI * x / senoide.cols));
-    senoide.at<uchar>(y, x) = 255;
-}
+    for (int i = 0; i < SIDE; ++i) {
+        float value = 127 * std::sin(2 * M_PI * PERIODOS * i / SIDE) + 128;
+        for (int j = 0; j < SIDE; ++j) {
+            image.at<float>(i, j) = value;
+        }
+    }
+
 ```
