@@ -48,7 +48,7 @@ cv::imwrite("senoide_horizontal-256.png", image_8u);
 
 A análise comparativa entre os arquivos gerados nos formatos PNG e YML foi realizada utilizando Python por ser uma linguagem mais prática e expressiva para esse tipo de tarefa. Com o auxílio das bibliotecas OpenCV e Matplotlib, foi possível ler os arquivos, extrair os dados relevantes e gerar os gráficos de forma rápida e intuitiva. Por isso, optei por realizar a parte analítica neste ambiente, facilitando tanto a manipulação dos dados quanto a visualização dos resultados.
 
-### 3. Comparando diferenças
+### 4. Comparando diferenças
 
 ```python
 import cv2
@@ -93,3 +93,5 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+```
+### 5. Resultados
