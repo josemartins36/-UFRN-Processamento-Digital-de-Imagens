@@ -50,3 +50,11 @@ for (int i = 0; i < imagemEsteganografada.rows; i++) {
     }
 }
 ```
+
+### 3. Salvamento da imagem recuperada
+```cpp
+cv::imwrite("imagem_recuperada.png", imagemRecuperada);
+std::cout << "Imagem recuperada salva como imagem_recuperada.png" << std::endl;
+```
+
+## Resultados
