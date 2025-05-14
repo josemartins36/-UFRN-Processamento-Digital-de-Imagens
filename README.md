@@ -12,7 +12,7 @@ Repositório da disciplina Processamento Digital de Imagens (PDI) da UFRN, desen
 
 [Capítulo 10, Decomposição de imagens em planos de bits - esteganografia](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2010%2C%20Decomposi%C3%A7%C3%A3o%20de%20imagens%20em%20planos%20de%20bits/esteganografia)
 
-[Capítulo 11, Preenchendo regiões]
+[Capítulo 11, Preenchendo regiões](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2011%2C%20Preenchendo%20regi%C3%B5es) **FALTA TERMINAR DE COMENTAR**
 
 [Capítulo 12, Manipulação de histogramas - equalize](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2012%2C%20Manipula%C3%A7%C3%A3o%20de%20histogramas/equalize) **FALTA TERMINAR DE COMENTAR**
 
