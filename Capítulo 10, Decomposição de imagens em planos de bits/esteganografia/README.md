@@ -61,7 +61,7 @@ std::cout << "Imagem recuperada salva como imagem_recuperada.png" << std::endl;
 Após a execução do programa, a imagem recuperada foi gerada com sucesso. Durante o processo, os 3 bits menos significativos (LSB) de cada pixel da imagem esteganografada foram extraídos e reposicionados nos bits mais significativos, revelando assim a imagem oculta que estava escondida.
 
 <p align="center">
-  <img src="./build/exemplo_trocaregioes.png" width="500"/>
+  <img src="./build/imagem_recuperada.png" width="500"/>
 </p>
 
-<p align="center"><i>Figura 1: Troca dos quadrantes diagonais na imagem original.</i></p>
+<p align="center"><i>Figura 2: imagem oculta na figura1.</i></p>
