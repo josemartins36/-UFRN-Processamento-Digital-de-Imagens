@@ -80,4 +80,4 @@ Particularmente, essa foi a tarefa que eu mais me interessei. Eu já conhecia a 
 
 <p align="center"><i>Figura 4: biel recuperado.</i></p>
 
-Vale comentar que a imagem recuperada tem perda de qualidade visual, como fica nítido na imagem recuperada de biel. Isso ocorre porque apesar dos 3 bits mais significativos representarem bem a estrutura da imagem, os detalhes sutis estão presentes também nos dígitos menos significativos, os quais não estão presentes.
+Vale comentar que a esteganografia tem perda de qualidade visual, como fica nítido na imagem recuperada de biel. Isso ocorre porque apesar dos 3 bits mais significativos representarem bem a estrutura da imagem, os detalhes mais sutis estão presentes nos dígitos menos significativos, os quais não estão presentes.
