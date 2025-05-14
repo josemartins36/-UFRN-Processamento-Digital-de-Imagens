@@ -20,7 +20,8 @@ Inspirado na abordagem do exemplo `filestorage.cpp` no material de estudo, o obj
 ## Trechos-chave do código
 
 ### 1. Geração da senóide
-A geração da senoide na horizontal (varia com i, constante em j)
+A geração da senoide na horizontal (varia com i, constante em j) ->float value = 127 * std::sin(2 * M_PI * PERIODOS * **i** / SIDE) + 128;
+
 ```cpp
     for (int i = 0; i < SIDE; ++i) {
         float value = 127 * std::sin(2 * M_PI * PERIODOS * i / SIDE) + 128;
