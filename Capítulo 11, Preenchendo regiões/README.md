@@ -11,3 +11,73 @@ Aprimore o algoritmo de contagem apresentado para identificar regiões com ou se
 <p align="center"><i>Figura 1: Imagem bolhas.</i></p>
 
 ---
+
+## Descrição da Tarefa
+
+O objetivo desta tarefa é desenvolver um programa chamado `esteganografia.cpp` que recupere uma imagem escondida nos bits menos significativos de uma imagem esteganografada, com as seguintes funcionalidades:
+
+- 
+- 
+- 
+
+---
+
+## Trechos-chave do código
+
+
+### 1. Rotulagem inicial com flood fill
+
+```cpp
+for (int i = 0; i < height; i++) {
+    for (int j = 0; j < width; j++) {
+      if (image.at<uchar>(i, j) == 255) {
+        nobjects++;
+        p.x = j;
+        p.y = i;
+        cv::floodFill(image, p, nobjects);
+      }
+    }
+  }
+```
+
+### 2. Remoção de objetos conectados às bordas
+
+```cpp
+  for (int i = 0; i < height; ++i) {
+    if (image.at<uchar>(i, 0) != 0 && image.at<uchar>(i, 0) != 255)
+      cv::floodFill(image, cv::Point(0, i), 0);
+    if (image.at<uchar>(i, width - 1) != 0 && image.at<uchar>(i, width - 1) != 255)
+      cv::floodFill(image, cv::Point(width - 1, i), 0);
+  }
+  for (int j = 0; j < width; ++j) {
+    if (image.at<uchar>(0, j) != 0 && image.at<uchar>(0, j) != 255)
+      cv::floodFill(image, cv::Point(j, 0), 0);
+    if (image.at<uchar>(height - 1, j) != 0 && image.at<uchar>(height - 1, j) != 255)
+      cv::floodFill(image, cv::Point(j, height - 1), 0);
+  }  
+```
+### 3. Contagem de objetos com buracos
+
+```cpp
+  cv::floodFill(image, cv::Point(0, 0), 255);
+
+  int objetos_com_buracos = 0;
+  std::set<int> ja_contados;
+
+  for (int i = 0; i < height; ++i) {
+    for (int j = 1; j < width; ++j) { // j começa em 1 para evitar j-1 < 0
+      if (image.at<uchar>(i, j) == 0) {
+        int cor_esquerda = image.at<uchar>(i, j - 1);
+
+        if (cor_esquerda != 0 && cor_esquerda != 255 && ja_contados.find(cor_esquerda) == ja_contados.end()) {
+          objetos_com_buracos++;
+          ja_contados.insert(cor_esquerda);
+        }
+
+        // pinta o buraco para não contar ele de novo
+        cv::floodFill(image, cv::Point(j, i), 254);
+      }
+    }
+  }
+```
+## Resultados
