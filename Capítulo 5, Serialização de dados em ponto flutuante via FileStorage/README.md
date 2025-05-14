@@ -23,11 +23,17 @@ Inspirado na abordagem do exemplo `filestorage.cpp` no material de estudo, o obj
 A geração da senoide na horizontal (varia com i, constante em j) ->float value = 127 * std::sin(2 * M_PI * PERIODOS * **i** / SIDE) + 128;
 
 ```cpp
-    for (int i = 0; i < SIDE; ++i) {
-        float value = 127 * std::sin(2 * M_PI * PERIODOS * i / SIDE) + 128;
-        for (int j = 0; j < SIDE; ++j) {
-            image.at<float>(i, j) = value;
-        }
-    }
+for (int i = 0; i < SIDE; ++i) {
+  float value = 127 * std::sin(2 * M_PI * PERIODOS * i / SIDE) + 128;
+  for (int j = 0; j < SIDE; ++j) {
+    image.at<float>(i, j) = value;
+  }
+}
 
+```
+
+```cpp
+cv::FileStorage fs("senoide_horizontal-256.yml", cv::FileStorage::WRITE);
+fs << "mat" << image;
+fs.release();
 ```
