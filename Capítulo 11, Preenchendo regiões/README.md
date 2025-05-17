@@ -104,4 +104,4 @@ O algoritmo conseguiu identificar corretamente o número de bolhas com e sem bur
 
 <p align="center"><i>Figura 2: Imagem bolhas pós processamento.</i></p>
 
-[veja]()
+[veja](./build/resultado_no_terminal.txt)
