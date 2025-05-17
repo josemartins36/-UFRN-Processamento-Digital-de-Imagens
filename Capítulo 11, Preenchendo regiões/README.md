@@ -95,3 +95,5 @@ for (int i = 0; i < height; i++) {
   }
 ```
 ## Resultados
+
+O algoritmo conseguiu identificar corretamente o número de bolhas com e sem buracos, com os objetos tocando a borda da iamgem sendo excluídos da contagem, como exigido.
