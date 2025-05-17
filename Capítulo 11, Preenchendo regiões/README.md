@@ -12,6 +12,20 @@ Aprimore o algoritmo de contagem apresentado para identificar regiões com ou se
 
 ---
 
+## Problema
+Imagens do tipo CV_8UC1 (8 bits por canal) só permitem valores de 0 a 255. Como o valor 0 geralmente representa o fundo, restam apenas 255 valores diferentes para representar objetos distintos. Se a imagem tiver mais de 255 regiões a serem rotuladas, os rótulos se repetem e não é mais possível distinguir corretamente todos os objetos.
+
+### Solução
+Para resolver esse problema, deve-se utilizar um tipo de imagem que suporte mais de 255 valores, como CV_16UC1 (imagem de 16 bits por pixel). Isso pode ser feito da seguinte forma:
+
+```cpp
+cv::Mat image = cv::imread("bolhas.png", cv::IMREAD_GRAYSCALE);
+image.convertTo(image, CV_16UC1); // Converte para 16 bits
+```
+
+Com isso, é possível rotular até 65535 objetos diferentes, evitando ambiguidade de rótulos.
+
+
 ## Descrição da Tarefa
 
 - 
