@@ -40,6 +40,7 @@ Com isso, é possível rotular até 65535 objetos diferentes, evitando ambiguida
 
 
 ### 1. Rotulagem inicial com flood fill
+Percorre toda a imagem em tons de cinza (0 a 255), e sempre que encontra um pixel branco (255), aplica floodFill para rotular toda a região conectada com um número único (valor de nobjects), contando e rotulando objetos distintos na imagem.
 
 ```cpp
 for (int i = 0; i < height; i++) {
@@ -55,6 +56,7 @@ for (int i = 0; i < height; i++) {
 ```
 
 ### 2. Remoção de objetos conectados às bordas
+Remove da imagem os objetos (rotulados anteriormente) que tocam as bordas, substituindo-os por 0 (preto).
 
 ```cpp
   for (int i = 0; i < height; ++i) {
@@ -71,6 +73,7 @@ for (int i = 0; i < height; i++) {
   }  
 ```
 ### 3. Contagem de objetos com buracos
+Primeiro, preenche o fundo da imagem com branco, evitando que o fundo seja interpretado como buraco durante a próxima etapa de detecção. Em seguida, procura-se por buracos (áreas pretas) dentro dos objetos e verifica a qual objeto (pela "cor à esquerda") o buraco pertence. Se for um objeto ainda não registrado, ele é contado como tendo buraco(s).
 
 ```cpp
   cv::floodFill(image, cv::Point(0, 0), 255);
@@ -105,9 +108,6 @@ O algoritmo conseguiu identificar corretamente o número de bolhas com e sem bur
 <p align="center"><i>Figura 2: Imagem bolhas pós processamento.</i></p>
 
 [Resultado no terminal:](./build/resultado_no_terminal.txt)
-
 256x256
-
 a figura tem 32 bolhas
-
 Objetos com buracos: 7
