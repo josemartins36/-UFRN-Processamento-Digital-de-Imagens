@@ -102,4 +102,4 @@ O algoritmo conseguiu identificar corretamente o número de bolhas com e sem bur
   <img src="./build/objetos_com_bolhas.png" width="500"/>
 </p>
 
-<p align="center"><i>Figura 1: Imagem bolhas pós processamento.</i></p>
+<p align="center"><i>Figura 2: Imagem bolhas pós processamento.</i></p>
