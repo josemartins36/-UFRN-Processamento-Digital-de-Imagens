@@ -28,9 +28,11 @@ Com isso, é possível rotular até 65535 objetos diferentes, evitando ambiguida
 
 ## Descrição da Tarefa
 
-- 
-- 
-- 
+- Remover da contagem os objetos que tocam as bordas.
+
+- Detectar e contar corretamente os objetos com e sem buracos.
+
+- Garantir que objetos com múltiplos buracos sejam corretamente identificados.
 
 ---
 
