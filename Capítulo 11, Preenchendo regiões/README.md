@@ -103,3 +103,5 @@ O algoritmo conseguiu identificar corretamente o número de bolhas com e sem bur
 </p>
 
 <p align="center"><i>Figura 2: Imagem bolhas pós processamento.</i></p>
+
+[veja]()
