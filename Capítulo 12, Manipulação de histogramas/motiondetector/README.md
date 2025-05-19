@@ -58,6 +58,10 @@ if (diff > limiar) {
   std::cout << "Movimento detectado! Diferença = " << diff << std::endl;
 }
 ```
+Esse limiar de sensibilidade foi testado manualmente visando alcançar o melhor resultado de detecção de movimento — nem muito pequeno ao ponto de ruído ser considerado movimento, nem tão grande ao ponto de não detectar movimentos bruscos na webcam.
+```cpp
+double limiar = 0.01;  // sensibilidade do detector
+```
 
 ## Resultados
 
