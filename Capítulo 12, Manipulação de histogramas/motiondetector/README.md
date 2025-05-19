@@ -65,6 +65,5 @@ double limiar = 0.01;  // sensibilidade do detector
 
 ## Resultados
 
-Durante a [execução do programa](https://youtu.be/HHbtMV1QBB4), é possível observar que, ao haver uma mudança significativa na cena capturada pela webcam (como movimentar as maõs e os dedos), o histograma do frame muda o suficiente para ultrapassar o limiar estabelecido. Com isso, o programa detecta o movimento e imprime o alerta visual e no console.
-
+Durante a [execução do programa](https://youtu.be/HHbtMV1QBB4), é possível observar que, ao haver uma mudança significativa na cena capturada pela webcam (como movimentar as mãos e os dedos), o histograma do frame muda o suficiente para ultrapassar o limiar estabelecido. Com isso, o programa detecta o movimento e imprime o alerta visual e no console.
 
