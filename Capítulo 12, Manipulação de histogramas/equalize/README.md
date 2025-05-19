@@ -59,4 +59,4 @@ Durante a [execução do programa](https://youtu.be/5gvMbqbpmCk), é possível o
   <img src="equalizer_escuridao.png" width="700"/>
 </p>
 
-<p align="center"><i>Figura 1: Efeito do equalizer na escuridão. [Equalizer na imagem da direita]</i></p>
+<p align="center"><i>Figura 2: Efeito do equalizer na escuridão. [Equalizer na imagem da direita]</i></p>
