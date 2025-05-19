@@ -6,11 +6,11 @@ Utilizando o programa histograma.cpp como [referência](https://agostinhobritojr
 
 ## Descrição da Tarefa
 
-- Remover da contagem os objetos que tocam as bordas.
+- Capturar imagens em tempo real da webcam.
 
-- Detectar e contar corretamente os objetos com e sem buracos.
+- Converter cada frame para tons de cinza.
 
-- Garantir que objetos com múltiplos buracos sejam corretamente identificados.
+- Realizar a equalização do histograma antes da exibição.
 
 ---
 
