@@ -103,3 +103,9 @@ Durante a execução, a imagem capturada é convertida para tons de cinza, exibi
 </p>
 
 <p align="center"><i>Figura 3: Filtro médio com máscara 21x21.</i></p>
+
+Quando a máscara é maior (por exemplo, 11×11 ou 21×21), ela considera mais vizinhos para calcular essa média. Quanto mais pixels são considerados, mais detalhes finos e ruídos locais são suavizados, pois eles têm menos influência no valor médio. Como consequência:
+
+- Máscaras pequenas (3×3): preservam mais detalhes.
+
+- Máscaras grandes (11×11, 21×21): geram imagens mais borradas e suaves.
