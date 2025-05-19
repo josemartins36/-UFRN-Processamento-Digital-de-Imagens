@@ -87,13 +87,19 @@ cv::Mat createAverageKernel(int size) {
 Durante a execução, a imagem capturada é convertida para tons de cinza, exibida na janela "original" e suavizada com a máscara de média, exibida na janela "filtrada". A suavização se intensifica à medida que o tamanho da máscara aumenta, suavizando detalhes e ruídos.
 
 <p align="center">
-  <img src="equalizer_luz.png" width="700"/>
+  <img src="3x3.png" width="700"/>
 </p>
 
-<p align="center"><i>Figura 1: Efeito do equalizer com iluminação. [Equalizer na imagem da direita]</i></p>
+<p align="center"><i>Figura 1: Filtro médio com máscara 3x3.</i></p>
 
 <p align="center">
-  <img src="equalizer_escuridao.png" width="700"/>
+  <img src="11x11.png" width="700"/>
 </p>
 
-<p align="center"><i>Figura 2: Efeito do equalizer na escuridão. [Equalizer na imagem da direita]</i></p>
+<p align="center"><i>Figura 2: Filtro médio com máscara 11x11.</i></p>
+
+<p align="center">
+  <img src="21x21.png" width="700"/>
+</p>
+
+<p align="center"><i>Figura 3: Filtro médio com máscara 21x21.</i></p>
