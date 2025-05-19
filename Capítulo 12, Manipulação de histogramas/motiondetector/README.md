@@ -65,19 +65,6 @@ double limiar = 0.01;  // sensibilidade do detector
 
 ## Resultados
 
-Durante a [execução do programa](https://youtu.be/5gvMbqbpmCk), é possível observar a diferença significativa no contraste das imagens ao comparar a versão original em tons de cinza com a versão equalizada. O efeito é mais evidente em ambientes com baixa ou iluminação irregular, pois o histograma que estava concentrado à esquerda (valores próximos de 0 na escuridão) é espalhado ao longo da faixa de 0 a 255, resultando em áreas muito escuras ganhando intensidade e ficando mais claras.
-
-<p align="center">
-  <img src="equalizer_luz.png" width="700"/>
-</p>
-
-<p align="center"><i>Figura 1: Efeito do equalizer com iluminação. [Equalizer na imagem da direita]</i></p>
-
-<p align="center">
-  <img src="equalizer_escuridao.png" width="700"/>
-</p>
-
-<p align="center"><i>Figura 1: Efeito do equalizer na escuridão. [Equalizer na imagem da direita]</i></p>
+Durante a [execução do programa](https://youtu.be/HHbtMV1QBB4), é possível observar que, ao haver uma mudança significativa na cena capturada pela webcam (como movimentar as maõs e os dedos), o histograma do frame muda o suficiente para ultrapassar o limiar estabelecido. Com isso, o programa detecta o movimento e imprime o alerta visual e no console.
 
 
-https://youtu.be/HHbtMV1QBB4
