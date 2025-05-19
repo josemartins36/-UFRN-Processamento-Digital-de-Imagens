@@ -1,6 +1,6 @@
-# motiondetector.cpp — detector de movimento com webcam
+# convolucao2.cpp — convolução com o filtro da média para máscara 3x3, 11x11, 21x21
 
-Utilizando o programa exemplos/convolucao.cpp como referência, implemente um programa convolucao2.cpp. O programa deverá realizar a convolução com o filtro da média para máscaras de tamanho 11×11e 21×21 pixels. Compare os resultados obtidos com o filtro de tamanho 3×3 pixels.
+Utilizando o programa exemplos/convolucao.cpp como [referência](https://agostinhobritojr.github.io/tutorial/pdi/convolucao.html), implemente um programa convolucao2.cpp. O programa deverá realizar a convolução com o filtro da média para máscaras de tamanho 11×11e 21×21 pixels. Compare os resultados obtidos com o filtro de tamanho 3×3 pixels.
 
 ---
 
