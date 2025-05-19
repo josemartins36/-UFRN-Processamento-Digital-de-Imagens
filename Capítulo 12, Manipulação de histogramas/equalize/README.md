@@ -50,13 +50,13 @@ cv::equalizeHist(gray, equalized);
 Durante a [execução do programa](https://youtu.be/5gvMbqbpmCk), é possível observar a diferença significativa no contraste das imagens ao comparar a versão original em tons de cinza com a versão equalizada. O efeito é mais evidente em ambientes com baixa ou iluminação irregular.
 
 <p align="center">
-  <img src="equalizer_luz.png" width="500"/>
+  <img src="equalizer_luz.png" width="700"/>
 </p>
 
-<p align="center"><i>Figura 1: Efeito do equalizer com iluminação.</i></p>
+<p align="center"><i>Figura 1: Efeito do equalizer com iluminação. [Equalizer na imagem da direita]</i></p>
 
 <p align="center">
-  <img src="equalizer_escuridao.png" width="500"/>
+  <img src="equalizer_escuridao.png" width="700"/>
 </p>
 
-<p align="center"><i>Figura 1: Efeito do equalizer na escuridão.</i></p>
+<p align="center"><i>Figura 1: Efeito do equalizer na escuridão. [Equalizer na imagem da direita]</i></p>
