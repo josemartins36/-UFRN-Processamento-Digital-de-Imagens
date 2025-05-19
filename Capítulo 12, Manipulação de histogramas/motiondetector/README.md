@@ -47,7 +47,7 @@ cv::calcHist(&gray, 1, 0, cv::Mat(), currHist, 1, &nbins, &histRange, uniform, a
 cv::normalize(currHist, currHist, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
 ```
 ### 4. Comparação entre histogramas consecutivos
-A função cv::compareHist com o método de Bhattacharyya mede a similaridade entre os histogramas. Se a diferença for maior que um limiar definido, é detectado um movimento.
+A função cv::compareHist com o [método de Bhattacharyya](https://docs.opencv.org/4.x/d6/dc7/group__imgproc__hist.html#ga994f53817d621e2e4228fc646342d386) mede a similaridade entre os histogramas. Se a diferença for maior que um limiar definido, é detectado um movimento.
 
 ```cpp
 double diff = cv::compareHist(prevHist, currHist, cv::HISTCMP_BHATTACHARYYA);
