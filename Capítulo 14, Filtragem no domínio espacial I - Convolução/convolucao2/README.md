@@ -84,4 +84,5 @@ cv::Mat createAverageKernel(int size) {
 
 ## Resultados
 
-Durante a [execução do programa](https://youtu.be/HHbtMV1QBB4), é possível observar que, ao haver uma mudança significativa na cena capturada pela webcam (como movimentar as mãos e os dedos), o histograma do frame muda o suficiente para ultrapassar o limiar estabelecido. Com isso, o programa detecta o movimento e imprime o alerta visual e no console.
+Durante a execução, a imagem capturada é convertida para tons de cinza, exibida na janela "original" e suavizada com a máscara de média, exibida na janela "filtrada". A suavização se intensifica à medida que o tamanho da máscara aumenta, suavizando detalhes e ruídos.
+
