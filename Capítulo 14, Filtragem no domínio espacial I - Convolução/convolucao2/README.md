@@ -24,43 +24,62 @@ Utilizando o programa exemplos/convolucao.cpp como [referência](https://agostin
 O programa utiliza a `cv::VideoCapture` para acessar a webcam padrão (índice 0).
 
 ```cpp
-cv::VideoCapture cap(0);
+cv::VideoCapture cap;
+int camera = cameraEnumerator();
+cap.open(camera);
+
 if (!cap.isOpened()) {
-    std::cout << "Erro ao abrir a câmera." << std::endl;
+    std::cerr << "Erro ao abrir a câmera!" << std::endl;
     return -1;
 }
-
 ```
 
 ### 2. Conversão para escala de cinza
-A imagem é convertida para escala de cinza para simplificar a análise de intensidade de pixels, como a detecção de movimento não precisa de cor — por isso o histograma é feito no gray. A exibição final é colorida.
+A imagem é convertida para tons de cinza para facilitar o processamento com o filtro da média.
 
 ```cpp
-cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+cv::flip(gray, gray, 1);
+cv::imshow("original", gray);
 ```
 
-### 3. Cálculo e normalização do histograma
-O histograma é calculado para a imagem em tons de cinza e normalizado com cv::NORM_MINMAX, o que facilita a comparação com o frame anterior.
+### 3. Aplicação do filtro da média (convolução)
+A convolução é feita com a função cv::filter2D, utilizando máscaras geradas dinamicamente.
 
 ```cpp
-cv::calcHist(&gray, 1, 0, cv::Mat(), currHist, 1, &nbins, &histRange, uniform, accumulate);
-cv::normalize(currHist, currHist, 0, 1, cv::NORM_MINMAX, -1, cv::Mat());
+cv::Mat mask = createAverageKernel(kernelSize);
+cv::filter2D(gray32f, filtered, CV_32F, mask);
 ```
-### 4. Comparação entre histogramas consecutivos
-A função [cv::compareHist](https://docs.opencv.org/4.x/d6/dc7/group__imgproc__hist.html#gaf4190090efa5c47cb367cf97a9a519bd) com o [método de Bhattacharyya](https://docs.opencv.org/4.x/d6/dc7/group__imgproc__hist.html#ga994f53817d621e2e4228fc646342d386) mede a similaridade entre os histogramas. Se a diferença for maior que um limiar definido, é detectado um movimento.
+
+A função createAverageKernel cria a máscara de média de acordo com o tamanho selecionado:
 
 ```cpp
-double diff = cv::compareHist(prevHist, currHist, cv::HISTCMP_BHATTACHARYYA);
-            
-if (diff > limiar) {
-  cv::putText(frame, "MOVIMENTO DETECTADO!", cv::Point(50,50),
-  cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0,0,255), 2);
-  std::cout << "Movimento detectado! Diferença = " << diff << std::endl;
+cv::Mat createAverageKernel(int size) {
+  float value = 1.0f / (size * size);
+  return cv::Mat(size, size, CV_32F, cv::Scalar(value));
 }
 ```
-Esse limiar de sensibilidade foi testado manualmente visando alcançar o melhor resultado de detecção de movimento — nem muito pequeno ao ponto de ruído ser considerado movimento, nem tão grande ao ponto de não detectar movimentos bruscos na webcam.
+### 4. Troca do tamanho da máscara durante a execução
 ```cpp
-double limiar = 0.01;  // sensibilidade do detector
+    switch (key) {
+      case '3':
+        kernelSize = 3;
+        mask = createAverageKernel(kernelSize);
+        std::cout << "Kernel 3x3" << std::endl;
+        break;
+      case '1':
+        kernelSize = 11;
+        mask = createAverageKernel(kernelSize);
+        std::cout << "Kernel 11x11" << std::endl;
+        break;
+      case '2':
+        kernelSize = 21;
+        mask = createAverageKernel(kernelSize);
+        std::cout << "Kernel 21x21" << std::endl;
+        break;
+      default:
+        break;
+    }
 ```
 
 ## Resultados
