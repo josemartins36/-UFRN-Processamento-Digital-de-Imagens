@@ -10,11 +10,11 @@ Utilizando o programa exemplos/convolucao.cpp como [referência](https://agostin
 
 - Converter cada frame para tons de cinza.
 
-- Calcular o histograma do frame atual e comparar com o histograma do frame anterior.
+- Aplicar o filtro da média (convolução) com máscaras de 3x3, 11x11 e 21x21.
 
-- Detectar movimento com base na diferença entre os histogramas.
+- Permitir a troca do tamanho da máscara durante a execução. (funcionalidade extra do programa)
 
-- Exibir uma mensagem de alerta na tela quando houver detecção.
+- Exibir lado a lado a imagem original (em cinza) e a imagem filtrada.
 
 ---
 
