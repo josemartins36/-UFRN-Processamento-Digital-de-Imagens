@@ -1,14 +1,6 @@
-# labeling.cpp — preenchendo regiões com OpenCV
+# equalize.cpp — equalização de histogramas com webcam
 
-Observando-se o programa [labeling.cpp](https://agostinhobritojr.github.io/tutorial/pdi/labeling.html) como exemplo, é possível verificar que caso existam mais de 255 objetos na cena, o processo de rotulação poderá ficar comprometido, visto que o tipo de dado usado para suportar imagens cinzentas permitem armazenar apenas um byte por pixel. Identifique a situação em que isso ocorre e proponha uma solução para este problema.
-
-Aprimore o algoritmo de contagem apresentado para identificar regiões com ou sem buracos internos que existam na cena. Assuma que objetos com mais de um buraco podem existir. Inclua suporte no seu algoritmo para não contar bolhas que tocam as bordas da imagem. Não se pode presumir, a priori, que elas tenham buracos ou não.
-
-<p align="center">
-  <img src="bolhas.png" width="500"/>
-</p>
-
-<p align="center"><i>Figura 1: Imagem bolhas.</i></p>
+Utilizando o programa histograma.cpp como [referência](https://agostinhobritojr.github.io/tutorial/pdi/histograma.html), implemente um programa equalize.cpp. Este deverá, para cada imagem capturada, realizar a equalização do histogram antes de exibir a imagem. Teste sua implementação apontando a câmera para ambientes com iluminações variadas e observando o efeito gerado. Assuma que as imagens processadas serão em tons de cinza.
 
 ---
 
