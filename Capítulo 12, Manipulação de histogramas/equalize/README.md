@@ -47,7 +47,7 @@ cv::equalizeHist(gray, equalized);
 ```
 ## Resultados
 
-Durante a [execução do programa](https://youtu.be/5gvMbqbpmCk), é possível observar a diferença significativa no contraste das imagens ao comparar a versão original em tons de cinza com a versão equalizada. O efeito é mais evidente em ambientes com baixa ou iluminação irregular.
+Durante a [execução do programa](https://youtu.be/5gvMbqbpmCk), é possível observar a diferença significativa no contraste das imagens ao comparar a versão original em tons de cinza com a versão equalizada. O efeito é mais evidente em ambientes com baixa ou iluminação irregular, pois o histograma que estava concentrado à esquerda (valores próximos de 0 na escuridão) é espalhado ao longo da faixa de 0 a 255, resultando em áreas muito escuras ganhando intensidade e ficando mais claras.
 
 <p align="center">
   <img src="equalizer_luz.png" width="700"/>
