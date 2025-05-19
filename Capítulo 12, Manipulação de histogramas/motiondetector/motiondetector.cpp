@@ -13,7 +13,7 @@ int main() {
     float range[] = {0, 256};
     const float* histRange = {range};
     bool uniform = true, accumulate = false;
-    double limiar = 0.05;  // sensibilidade do detector
+    double limiar = 0.01;  // sensibilidade do detector
 
     bool firstFrame = true;
 
