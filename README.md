@@ -25,3 +25,12 @@ Repositório da disciplina Processamento Digital de Imagens (PDI) da UFRN, desen
 [Capítulo 15, Filtragem no domínio espacial II - TiltShift]
 
 # Unidade 2
+[Capítulo 16, A Tranformada Discreta de Fourier]
+
+[Capítulo 17, Filtragem no Domínio da Frequência]
+
+[Capítulo 19, Detecção de bordas com o algoritmo de Canny]
+
+[Capítulo 20, Quantização vetorial com k-means]
+
+# Unidade 3
