@@ -84,4 +84,3 @@ A imagem final contém:
 </p>
 
 <p align="center"><i>Figura 2: imagem com pontilhismo.</i></p>
-.
