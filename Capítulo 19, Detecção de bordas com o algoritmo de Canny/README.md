@@ -6,13 +6,15 @@ Utilizando os programas canny.cpp e pontilhismo.cpp como [referência](https://a
 
 ## Descrição da Tarefa passo a passo
 
-- Criar uma imagem pontilhista com pontos distribuídos em uma grade com jitter aleatório.
+- Implementar uma versão do algoritmo de K-means utilizando o OpenCV para quantização de cores em uma imagem RGB.
 
-- Aplicar o algoritmo de Canny com múltiplos limiares (10 até 70) para detectar bordas em diferentes níveis de detalhe.
+- Configurar o número de clusters como 8, e a quantidade de rodadas (nRodadas) como 1 para cada execução do algoritmo.
 
-- Reforçar as regiões de contorno desenhando círculos menores e mais densos nas bordas detectadas, sobre a imagem pontilhista.
+- Substituir o método de inicialização dos centróides por KMEANS_RANDOM_CENTERS, o que introduz variabilidade no agrupamento.
 
-- Produzir uma imagem final com textura artística nas áreas suaves e definição realçada nos contornos.
+- Executar o algoritmo 10 vezes sobre a mesma imagem de entrada, salvando os resultados com nomes diferentes.
+  
+- Comparar visualmente as imagens geradas para observar a sensibilidade do K-means à inicialização aleatória.ontornos.
 
 ---
 
