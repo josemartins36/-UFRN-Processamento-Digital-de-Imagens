@@ -78,3 +78,51 @@ As imagens resultantes apresentam variações significativas entre si, mesmo ten
 </p>
 
 <p align="center"><i>Figura 2: clusters_v1.</i></p>
+
+<p align="center">
+  <img src="./build/saida_2.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 3: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_3.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 4: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_4.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 5: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_5.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 6: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_6.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 7: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_7.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 8: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_8.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 9: clusters_v0.</i></p>
+
+<p align="center">
+  <img src="./build/saida_9.jpg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 10: clusters_v0.</i></p>
