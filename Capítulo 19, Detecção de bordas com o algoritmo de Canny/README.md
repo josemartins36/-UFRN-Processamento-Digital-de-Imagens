@@ -6,52 +6,56 @@ Utilizando os programas canny.cpp e pontilhismo.cpp como [referência](https://a
 
 ## Descrição da Tarefa passo a passo
 
-- Implementar uma versão do algoritmo de K-means utilizando o OpenCV para quantização de cores em uma imagem RGB.
+- Criar uma imagem pontilhista com pontos distribuídos em uma grade com jitter aleatório.
 
-- Configurar o número de clusters como 8, e a quantidade de rodadas (nRodadas) como 1 para cada execução do algoritmo.
+- Aplicar o algoritmo de Canny com múltiplos limiares para detectar bordas em diferentes níveis de detalhe.
 
-- Substituir o método de inicialização dos centróides por KMEANS_RANDOM_CENTERS, o que introduz variabilidade no agrupamento.
+- Reforçar as regiões de contorno desenhando círculos menores e mais densos nas bordas detectadas, sobre a imagem pontilhista.
 
-- Executar o algoritmo 10 vezes sobre a mesma imagem de entrada, salvando os resultados com nomes diferentes.
-  
-- Comparar visualmente as imagens geradas para observar a sensibilidade do K-means à inicialização aleatória.ontornos.
+- Produzir uma imagem final com textura artística nas áreas suaves e definição realçada nos contornos.
 
 ---
 
 ## Trechos-chave do código
 
-### 1. Leitura da imagem e preparação dos dados
+### 1. Criação da grade pontilhista e sorteio com jitter
 
 ```cpp
-cv::Mat img = cv::imread(argv[1], cv::IMREAD_COLOR);
-cv::Mat samples(img.rows * img.cols, 3, CV_32F);
+std::vector<int> xrange(height / STEP);
+std::vector<int> yrange(width / STEP);
+std::iota(xrange.begin(), xrange.end(), 0);
+std::iota(yrange.begin(), yrange.end(), 0);
 
-for (int y = 0; y < img.rows; y++) {
-  for (int x = 0; x < img.cols; x++) {
-    for (int z = 0; z < 3; z++) {
-      samples.at<float>(y + x * img.rows, z) = img.at<cv::Vec3b>(y, x)[z];
-    }
-  }
-}
+for (size_t i = 0; i < xrange.size(); i++)
+  xrange[i] = xrange[i] * STEP + STEP / 2;
 ```
 
-### 2. Execução do algoritmo com centros aleatórios
+### 2. Desenho da imagem pontilhista base
 
 ```cpp
-cv::kmeans(samples, nClusters, rotulos,
-           cv::TermCriteria(cv::TermCriteria::EPS | cv::TermCriteria::COUNT, 10000, 0.0001),
-           1, // nRodadas = 1
-           cv::KMEANS_RANDOM_CENTERS, centros);
+int jittered_x = x + std::rand() % (2 * JITTER + 1) - JITTER;
+int jittered_y = y + std::rand() % (2 * JITTER + 1) - JITTER;
+cv::circle(canvas, cv::Point(jittered_y, jittered_x), RAIO,
+           cv::Scalar(gray, gray, gray), cv::FILLED, cv::LINE_AA);
 ```
 
-### 3. Reconstrução da imagem rotulada com as cores dos centros
+### 3. Aplicação do algoritmo de Canny e reforço das bordas
 
 ```cpp
-for (int y = 0; y < img.rows; y++) {
-  for (int x = 0; x < img.cols; x++) {
-    int indice = rotulos.at<int>(y + x * img.rows, 0);
-    for (int z = 0; z < 3; z++) {
-      rotulada.at<cv::Vec3b>(y, x)[z] = (uchar)centros.at<float>(indice, z);
+for (int i = 0; i < CANNY_STEPS; ++i) {
+  int t_low = 10 + i * 20;
+  int t_high = 3 * t_low;
+  cv::Canny(image, edges, t_low, t_high);
+
+  int raio_borda = std::max(1, RAIO - i);
+
+  for (int y = 0; y < edges.rows; ++y) {
+    for (int x = 0; x < edges.cols; ++x) {
+      if (edges.at<uchar>(y, x) != 0) {
+        int gray = image.at<uchar>(y, x);
+        cv::circle(canvas, cv::Point(x, y), raio_borda,
+                   cv::Scalar(gray, gray, gray), cv::FILLED, cv::LINE_AA);
+      }
     }
   }
 }
@@ -59,13 +63,13 @@ for (int y = 0; y < img.rows; y++) {
 
 ## Resultados
 
-As imagens resultantes apresentam variações significativas entre si, mesmo tendo sido processadas a partir da mesma imagem de entrada. Isso ocorre devido a:
+A imagem final contém:
 
-- Inicialização aleatória dos centróides (KMEANS_RANDOM_CENTERS): como o ponto de partida influencia fortemente a convergência do algoritmo, diferentes execuções resultam em agrupamentos distintos.
+- Regiões homogêneas preenchidas com pontos espaçados de tamanho uniforme.
 
-- Apenas uma rodada por execução (nRodadas = 1): não há tentativa de buscar uma melhor configuração entre várias, o que acentua ainda mais a variabilidade dos resultados
+- Regiões de contorno com pontos mais densos e menores, capturados pelas bordas de Canny em diferentes níveis.
 
--
+- Transição visual natural entre áreas lisas e detalhadas.
 
 <p align="center">
   <img src="./cannypoints/everest2.png" width="700"/>
