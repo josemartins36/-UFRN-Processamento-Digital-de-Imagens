@@ -74,13 +74,13 @@ A imagem final contém:
 - Transição visual natural entre áreas lisas e detalhadas.
 
 <p align="center">
-  <img src="3x3.png" width="700"/>
+  <img src="./cannypoints/everest.png" width="700"/>
 </p>
 
 <p align="center"><i>Figura 1: imagem original.</i></p>
 
 <p align="center">
-  <img src="11x11.png" width="700"/>
+  <img src="./cannypoints/build/.png" width="700"/>
 </p>
 
 <p align="center"><i>Figura 2: imagem com pontilhismo.</i></p>
