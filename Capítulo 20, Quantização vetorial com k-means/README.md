@@ -68,11 +68,13 @@ As imagens resultantes apresentam variações significativas entre si, mesmo ten
 -
 
 <p align="center">
-  <img src="./cannypoints/everest2.png" width="700"/>
+  <img src="./build/saida_0.png" width="700"/>
 </p>
 
-<p align="center"><i>Figura 1: imagem original.</i></p>
+<p align="center"><i>Figura 1: clusters_v0.</i></p>
 
 <p align="center">
-  <img src="./cannypoints/build/cannypoints.png" width="700"/>
+  <img src="./build/saida_1.png" width="700"/>
 </p>
+
+<p align="center"><i>Figura 2: clusters_v1.</i></p>
