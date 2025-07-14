@@ -34,3 +34,11 @@ Repositório da disciplina Processamento Digital de Imagens (PDI) da UFRN, desen
 [Capítulo 20, Quantização vetorial com k-means](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2020%2C%20Quantiza%C3%A7%C3%A3o%20vetorial%20com%20k-means)
 
 # Unidade 3
+
+[Capítulo 21, Extração de contornos]
+
+[Capítulo 22, Extração de características: Momentos de Hu para regiões]
+
+[Capítulo 23, Extração de características: Momentos de Hu para contornos]
+
+[Capítulo 24, Filtragem de forma com morfologia matemática]
