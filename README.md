@@ -35,7 +35,7 @@ Repositório da disciplina Processamento Digital de Imagens (PDI) da UFRN, desen
 
 # Unidade 3
 
-[Capítulo 21, Extração de contornos]
+[Capítulo 21, Extração de contornos](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/tree/main/Cap%C3%ADtulo%2021%2C%20Extra%C3%A7%C3%A3o%20de%20contornos)
 
 [Capítulo 22, Extração de características: Momentos de Hu para regiões]
 
