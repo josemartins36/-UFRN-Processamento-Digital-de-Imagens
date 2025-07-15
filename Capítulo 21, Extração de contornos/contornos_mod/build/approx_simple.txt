@@ -1,0 +1,3 @@
+Total de contornos encontrados: 85
+Total de pontos nos contornos: 6547
+
