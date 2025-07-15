@@ -26,47 +26,35 @@ Modifique o programa para extrair os contornos internos das componentes conectad
 
 ## Trechos-chave do código
 
-### 1. Leitura da imagem e preparação dos dados
+### 1. Leitura da imagem e binarização
 
 ```cpp
-cv::Mat img = cv::imread(argv[1], cv::IMREAD_COLOR);
-cv::Mat samples(img.rows * img.cols, 3, CV_32F);
-
-for (int y = 0; y < img.rows; y++) {
-  for (int x = 0; x < img.cols; x++) {
-    for (int z = 0; z < 3; z++) {
-      samples.at<float>(y + x * img.rows, z) = img.at<cv::Vec3b>(y, x)[z];
-    }
-  }
-}
+cv::Mat image = cv::imread(argv[1], cv::IMREAD_GRAYSCALE);
+cv::threshold(image, image, 0, 255, cv::THRESH_BINARY_INV + cv::THRESH_OTSU);
 ```
 
-### 2. Execução do algoritmo com centros aleatórios
+### 2. Extração dos contornos
 
 ```cpp
-cv::kmeans(samples, nClusters, rotulos,
-           cv::TermCriteria(cv::TermCriteria::EPS | cv::TermCriteria::COUNT, 10000, 0.0001),
-           1, // nRodadas = 1
-           cv::KMEANS_RANDOM_CENTERS, centros);
+std::vector<std::vector<cv::Point>> contours;
+std::vector<cv::Vec4i> hierarchy;
+
+cv::findContours(image, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_NONE); // ou CHAIN_APPROX_SIMPLE
 ```
 
-### 3. Reconstrução da imagem rotulada com as cores dos centros
+### 3. Desenho dos contornos e geração de SVG
 
 ```cpp
-for (int y = 0; y < img.rows; y++) {
-  for (int x = 0; x < img.cols; x++) {
-    int indice = rotulos.at<int>(y + x * img.rows, 0);
-    for (int z = 0; z < 3; z++) {
-      rotulada.at<cv::Vec3b>(y, x)[z] = (uchar)centros.at<float>(indice, z);
-    }
+for (size_t i = 0; i < contours.size(); i++) {
+  file << "<path d=\"M " << contours[i][0].x << " " << contours[i][0].y << " ";
+  for (size_t j = 1; j < contours[i].size(); j++) {
+    file << "L" << contours[i][j].x << " " << contours[i][j].y << " ";
   }
+  file << "Z\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" />" << std::endl;
+  cv::drawContours(image, contours, i, CV_RGB(255, 0, 0), 1);
 }
 ```
 
 ## Resultados
 
-As imagens resultantes apresentam variações significativas entre si, mesmo tendo sido processadas a partir da mesma imagem de entrada. Isso ocorre devido a:
-
-- Inicialização aleatória dos centróides (KMEANS_RANDOM_CENTERS): como o ponto de partida influencia fortemente a convergência do algoritmo, diferentes execuções resultam em agrupamentos distintos.
-
-- Apenas uma rodada por execução (nRodadas = 1): não há tentativa de buscar uma melhor configuração entre várias, o que acentua ainda mais a variabilidade dos resultados
+Para a imagem dos retângulos, contou-se x pontos para realizar o contorno. Já na formas.png, foram detectados múltiplos contornos na imagem, correspondentes aos parafusos, buchas e arruelas presentes na cena.
