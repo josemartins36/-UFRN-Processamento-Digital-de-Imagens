@@ -8,15 +8,19 @@ Modifique o programa para extrair os contornos internos das componentes conectad
 
 ## Descrição da Tarefa passo a passo
 
-- Implementar uma versão do algoritmo de K-means utilizando o OpenCV para quantização de cores em uma imagem RGB.
+- Aplicar binarização automática utilizando o método de Otsu com inversão de tons para destacar os objetos (objetos tornam-se brancos, fundo preto).
 
-- Configurar o número de clusters como 8, e a quantidade de rodadas (nRodadas) como 1 para cada execução do algoritmo.
+- Detectar os contornos de todos os objetos da imagem utilizando a função cv::findContours() da biblioteca OpenCV.
 
-- Substituir o método de inicialização dos centróides por KMEANS_RANDOM_CENTERS, o que introduz variabilidade no agrupamento.
+- Testar os dois modos de aproximação de contorno:
 
-- Executar o algoritmo 10 vezes sobre a mesma imagem de entrada, salvando os resultados com nomes diferentes.
+  cv::CHAIN_APPROX_SIMPLE: armazena apenas os vértices significativos dos contornos.
+
+  cv::CHAIN_APPROX_NONE: armazena todos os pontos dos contornos, preservando os detalhes completos.
+
+- Gerar visualizações com os contornos desenhados sobre a imagem original, bem como arquivos SVG com os contornos vetorizados.
   
-- Comparar visualmente as imagens geradas para observar a sensibilidade do K-means à inicialização aleatória.ontornos.
+- Contar e exibir o número total de pontos em todos os contornos (para comparar os métodos SIMPLE e NONE).
 
 ---
 
@@ -66,65 +70,3 @@ As imagens resultantes apresentam variações significativas entre si, mesmo ten
 - Inicialização aleatória dos centróides (KMEANS_RANDOM_CENTERS): como o ponto de partida influencia fortemente a convergência do algoritmo, diferentes execuções resultam em agrupamentos distintos.
 
 - Apenas uma rodada por execução (nRodadas = 1): não há tentativa de buscar uma melhor configuração entre várias, o que acentua ainda mais a variabilidade dos resultados
-
--
-
-<p align="center">
-  <img src="./build/saida_0.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 1: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_1.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 2: clusters_v1.</i></p>
-
-<p align="center">
-  <img src="./build/saida_2.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 3: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_3.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 4: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_4.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 5: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_5.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 6: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_6.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 7: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_7.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 8: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_8.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 9: clusters_v0.</i></p>
-
-<p align="center">
-  <img src="./build/saida_9.jpg" width="700"/>
-</p>
-
-<p align="center"><i>Figura 10: clusters_v0.</i></p>
