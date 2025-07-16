@@ -58,3 +58,5 @@ for (size_t i = 0; i < contours.size(); i++) {
 ## Resultados
 
 Para a imagem dos retângulos, contou-se x pontos para realizar o contorno. Já na formas.png, foram detectados múltiplos contornos na imagem, correspondentes aos parafusos, buchas e arruelas presentes na cena.
+
+[...]
