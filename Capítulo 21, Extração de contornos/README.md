@@ -71,8 +71,20 @@ Com [CHAIN_APPROX_SIMPLE](https://github.com/josemartins36/-UFRN-Processamento-D
 
 - Ideal para representar a forma geral dos objetos com economia de memória.
 
+<p align="center">
+  <img src="./contornos_mod/build/contornos_approx_simple.svg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 2: contorno com simple. (clique na imagem para ver melhor)</i></p>
+
 Com [CHAIN_APPROX_NONE](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/blob/main/Cap%C3%ADtulo%2021%2C%20Extra%C3%A7%C3%A3o%20de%20contornos/contornos_mod/build/approx_none.txt):
 
 - O número total de pontos aumentou bastante (de 6547 foi para 10945), preservando todos os detalhes finos dos contornos.
 
 - Mais custoso computacionalmente, mas com maior precisão na forma.
+
+<p align="center">
+  <img src="./contornos_mod/build/contornos_none_simple.svg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 3: contorno com none. (clique na imagem para ver melhor)</i></p>
