@@ -84,7 +84,7 @@ Com [CHAIN_APPROX_NONE](https://github.com/josemartins36/-UFRN-Processamento-Dig
 - Mais custoso computacionalmente, mas com maior precisão na forma.
 
 <p align="center">
-  <img src="./contornos_mod/build/contornos_none_simple.svg" width="700"/>
+  <img src="./contornos_mod/build/contornos_approx_none.svg" width="700"/>
 </p>
 
 <p align="center"><i>Figura 3: contorno com none. (clique na imagem para ver melhor)</i></p>
