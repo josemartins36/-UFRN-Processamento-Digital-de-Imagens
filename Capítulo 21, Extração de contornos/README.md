@@ -65,14 +65,14 @@ Para a imagem dos retângulos, contou-se x pontos para realizar o contorno. Já 
 
 <p align="center"><i>Figura 1: contorno retângulo. (clique na imagem para ver melhor)</i></p>
 
-Com CHAIN_APPROX_SIMPLE:
+Com [CHAIN_APPROX_SIMPLE](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/blob/main/Cap%C3%ADtulo%2021%2C%20Extra%C3%A7%C3%A3o%20de%20contornos/contornos_mod/build/approx_simple.txt):
 
-- O número total de pontos nos contornos foi significativamente menor.
+- O número total de pontos nos contornos foi significativamente menor (6547).
 
 - Ideal para representar a forma geral dos objetos com economia de memória.
 
-Com CHAIN_APPROX_NONE:
+Com [CHAIN_APPROX_NONE](https://github.com/josemartins36/-UFRN-Processamento-Digital-de-Imagens/blob/main/Cap%C3%ADtulo%2021%2C%20Extra%C3%A7%C3%A3o%20de%20contornos/contornos_mod/build/approx_none.txt):
 
-- O número total de pontos aumentou bastante, preservando todos os detalhes finos dos contornos.
+- O número total de pontos aumentou bastante (de 6547 foi para 10945), preservando todos os detalhes finos dos contornos.
 
 - Mais custoso computacionalmente, mas com maior precisão na forma.
