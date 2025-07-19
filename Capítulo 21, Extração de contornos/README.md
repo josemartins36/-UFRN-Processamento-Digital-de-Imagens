@@ -63,7 +63,7 @@ Para a imagem dos retângulos, contou-se x pontos para realizar o contorno. Já 
   <img src="./contornos/build/contornos.svg" width="700"/>
 </p>
 
-<p align="center"><i>Figura 1: contorno retângulo.</i></p>
+<p align="center"><i>Figura 1: contorno retângulo. (clique na imagem para ver melhor)</i></p>
 
 Com CHAIN_APPROX_SIMPLE:
 
