@@ -59,6 +59,12 @@ for (size_t i = 0; i < contours.size(); i++) {
 
 Para a imagem dos retângulos, contou-se x pontos para realizar o contorno. Já na formas.png, foram detectados múltiplos contornos na imagem, correspondentes aos parafusos, buchas e arruelas presentes na cena.
 
+<p align="center">
+  <img src="./contornos/build/contorno.svg" width="700"/>
+</p>
+
+<p align="center"><i>Figura 1: contorno retângulo.</i></p>
+
 Com CHAIN_APPROX_SIMPLE:
 
 - O número total de pontos nos contornos foi significativamente menor.
