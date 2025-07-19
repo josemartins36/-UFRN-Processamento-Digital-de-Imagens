@@ -59,4 +59,14 @@ for (size_t i = 0; i < contours.size(); i++) {
 
 Para a imagem dos retângulos, contou-se x pontos para realizar o contorno. Já na formas.png, foram detectados múltiplos contornos na imagem, correspondentes aos parafusos, buchas e arruelas presentes na cena.
 
-[...]
+Com CHAIN_APPROX_SIMPLE:
+
+O número total de pontos nos contornos foi significativamente menor.
+
+Ideal para representar a forma geral dos objetos com economia de memória.
+
+Com CHAIN_APPROX_NONE:
+
+O número total de pontos aumentou bastante, preservando todos os detalhes finos dos contornos.
+
+Mais custoso computacionalmente, mas com maior precisão na forma.
